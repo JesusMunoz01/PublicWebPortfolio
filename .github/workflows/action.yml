@@ -1,0 +1,26 @@
+#name: Create build
+
+#env:
+#   CI: false 
+
+# on:
+#   push:
+#     branches:
+#       - master
+    
+# jobs:
+#   build:
+#     runs-on: windows-latest
+#     name: Build
+#     steps:
+#       - name: git-checkout
+#         uses: actions/checkout@v2
+        
+#       - name: Dependencies
+#         run: npm install
+#       - run: npm install @babel/plugin-proposal-private-property-in-object
+        
+#       - name: Build
+#         run: npm run build
+        
+

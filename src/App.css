@@ -1,0 +1,220 @@
+.App {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to bottom left, #66ff99 0%, #0000cc 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+h1{
+  line-height: 75%;
+  color: white;
+  font-size: 150%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2{
+  font-size: 150%;
+  color: rgb(0, 252, 231);
+}
+
+.topnav{
+  display: flex;
+  flex-direction: row-reverse;
+  position: sticky;
+  width: 100%;
+  height: 10vh;
+  justify-content: flex-start;
+  align-items:center;
+  background-color: #282c34;
+}
+
+.topnav a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 100%;
+  width: 33.33%;
+  height: 10vh;
+  text-decoration: none;
+}
+
+.topnav a a{
+  width: 100%;
+}
+
+.topnav a span{
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.topnav a:hover {
+  color: black;
+}
+
+.topnav a.active{
+  background-color: rgb(12, 189, 130);
+}
+
+#Intro {
+  color: rgb(0, 255, 234);
+  text-align: left;
+  margin-top: 5%;
+  min-height: 90vh;
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+#introAbout {
+  margin-top: 50px;
+  font-size: 150%;
+  color: white;
+  height: 50vh;
+  max-width: 100%;
+  display: inline-block;
+}
+
+#introBundle{
+  display: flex;
+  align-items: center;
+  align-content: space-evenly;
+  max-width: 100%;
+}
+
+#selfImgContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#selfImg{
+  max-width: 30%;
+  border-radius: 30%;
+}
+
+#pText{
+  color: white;
+  padding: 10px;
+  background-color: #282c34;
+  border-radius: 10px;
+  display: block;
+  font-size: 110%;
+}
+
+.link-info{
+  word-wrap: break-all;
+  overflow-wrap: break-word;
+}
+
+.Desc {
+  color: rgb(201, 196, 196);
+  text-align: center;
+  margin-top: 50px;
+  height: 100%;
+  font-size: 200%;
+}
+
+.Desc h1{
+  overflow-wrap: break-word;
+}
+
+#skills {
+  font-size: 75%;
+  color: white;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-wrap: break-word;
+}
+
+#skillsList{
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  font-size: 75%;
+  color: white;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+}
+
+#desc0 {
+  font-size: 75%;
+  color: white;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-wrap: break-word;
+}
+
+#infoList {
+  display: inline-block;
+}
+
+.Projects {
+  color: rgb(0, 255, 234);
+  /*rgb(82, 201, 46)*/
+  text-align: left;
+  margin-top: 25px;
+  height: 100%;
+  overflow: auto;
+}
+
+.Projects h1{
+  font-size: 100%;
+}
+
+#desc1 {
+  margin-left: 2%;
+  font-size: 300%;
+  padding-bottom: 20px;
+}
+
+#desc2 {
+  padding-top: 20px;
+  color: white;
+  margin-left: 1%;
+  font-size: 150%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#keyword{
+  background-color: #282c34;
+  padding: 10px;
+  margin-top: 1%;
+  font-size: 100%;
+  overflow-wrap: break-word;
+}
+
+#courseList{
+  background-color: #282c34;
+  padding: 10px;
+  margin-top: 1%;
+  font-size: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+#p0, #p4{
+  max-width: 40%;
+  padding: 2px;
+}
+
+#p1, #p2, #p3, #p5{
+  max-width: 100%;
+}
+
+#p6{
+  margin-bottom: 2px;
+  max-width: 80%;
+}
