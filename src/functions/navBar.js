@@ -1,27 +1,29 @@
-import { Outlet, Link } from "react-router-dom";
+import Link from "next/link";
+import styles from "../app/page.module.css"
+
 function Navbar({value}) {
     if(value == 0)
         return(
-            <div className="topnav">
-                <a><Link to="/projects" ><span>Projects</span></Link></a>
-                <a><Link to="/info" ><span>Information</span></Link></a>
-                <a class="active"><Link href="/WebPortfolio"><span>Home</span></Link></a>
+            <div className={styles.topnav}>
+                <Link href="/projects" ><span>Projects</span></Link>
+                <Link href="/info" ><span>Information</span></Link>
+                <Link className={styles.active} href="/"><span>Home</span></Link>
             </div>
         )
     else if(value == 1)
         return(
-            <div className="topnav">
-                <a><Link to="/projects" ><span>Projects</span></Link></a>
-                <a class="active"><Link to="/info" ><span>Information</span></Link></a>
-                <a><Link to="/"><span>Home</span></Link></a>
+            <div className={styles.topnav}>
+                <Link href="/projects" ><span>Projects</span></Link>
+                <Link className={styles.active} href="/info" ><span>Information</span></Link>
+                <Link href="/"><span>Home</span></Link>
             </div>
         )
     else
         return(
-            <div className="topnav">
-                <a class="active"><Link to="/projects"><span>Projects</span></Link></a>
-                <a><Link to="/info" ><span>Information</span></Link></a>
-                <a><Link to="/"><span>Home</span></Link></a>
+            <div className={styles.topnav}>
+                <Link className={styles.active} href="/projects"><span>Projects</span></Link>
+                <Link href="/info" ><span>Information</span></Link>
+                <Link href="/"><span>Home</span></Link>
             </div>
         )
 }
