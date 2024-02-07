@@ -1,0 +1,52 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupForm, .signinForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid #000;
+    background-color: #282c34;
+    padding: 20px;
+    width: 500px;
+}
+
+.signupForm input, .signinForm input{
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.signupForm button, .signinForm button{
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 10px 40px; 
+    cursor: pointer;
+}
+
+.loggedStatus{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid #000;
+    background-color: #282c34;
+    padding: 20px;
+    width: 500px;
+}
