@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import SubmitBtn from "./submitBtn";
+import SubmitBtn from "./Buttons/submitBtn";
 import { useFormState } from "react-dom";
 
 type FormState = {
@@ -13,6 +13,7 @@ type SigninProps = {
     styles: any;
     userLogin: (prevState: any, formData: FormData) => Promise<FormState>;
     userSignout: () => void;
+    redirect: () => void
 }
 
 const initialState: FormState = {
@@ -21,7 +22,7 @@ const initialState: FormState = {
     user: ""
 }
 
-export default function Signin({ styles, userLogin, userSignout }: SigninProps) {
+export default function Signin({ styles, userLogin, userSignout, redirect }: SigninProps) {
     const [formData, formAction] = useFormState(userLogin, initialState)
     const [isLogged, setIsLogged] = useState(false);
 
@@ -29,7 +30,10 @@ export default function Signin({ styles, userLogin, userSignout }: SigninProps) 
         if(formData?.login) {
             localStorage.setItem("user", formData?.user);
             setIsLogged(true);
+            redirect();
         }
+        if(localStorage.getItem("user"))
+            setIsLogged(true);
     }, [formData.login])
 
     const signout = () => {
@@ -47,7 +51,7 @@ export default function Signin({ styles, userLogin, userSignout }: SigninProps) 
         <div className={styles.signin}>
             {isLogged ? 
             <div className={styles.loggedStatus}>
-                <h1>Welcome, {formData?.user}</h1> 
+                <h1>Welcome, {localStorage.getItem("user")}</h1> 
                 <button onClick={signout}>Sign Out</button>
             </div>
             :

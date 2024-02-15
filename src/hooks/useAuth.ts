@@ -62,5 +62,14 @@ export const useAuthData = () => {
     
     }
 
-    return { authSignup, authSignin, authSignout };
+    const getUser = (): string | null => {
+        const user = auth.currentUser;
+        if (user !== null) {
+            return user.email as string;
+        } else {
+            return null;
+        }
+    }
+
+    return { authSignup, authSignin, authSignout, getUser };
 }

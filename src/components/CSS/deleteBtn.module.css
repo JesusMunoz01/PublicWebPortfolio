@@ -1,0 +1,15 @@
+.basic{
+    padding: "0 7px"; 
+    border-radius: "10px";
+    background-color: red;
+}
+
+.borderlessShadow{
+    background-color: red;
+    border: 1px #282c34;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    margin-bottom: 10px;
+}

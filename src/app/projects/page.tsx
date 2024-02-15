@@ -11,7 +11,6 @@ export default function Projects() {
           <div className="col" id={styles.desc1}>
               <h1>Personal Projects</h1>
           </div>
-          <hr></hr>
           <div className="container-fluid">
             <ProjectsList />
           </div>

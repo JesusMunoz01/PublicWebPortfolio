@@ -1,32 +1,22 @@
 import styles from "../app/info/page.module.css"
 
-export function Course({name, key}){
+export function Course({name}){
     return(
         <div className="container">
-            <p>
-            <a className="container">
-                <span className="badge badge-secondary" id={styles.courseList}>{name}</span>
-            </a>
-            </p>
+            <span className="badge badge-secondary" id={styles.courseList}>{name}</span>
         </div>
     )
 }
 
-export function Skill({name, key}){
+export function Skill({name}){
     return(
-        <div className="container" id={styles.skillsList}>
-        {
-            <p>
-                <a className="container">
-                    <span className="badge badge-secondary" id={styles.keyword}>{name}</span>
-                </a>
-            </p>
-        }
+        <div className={styles.skillsList} id={styles.skillsList}>
+            <span className="badge badge-secondary" id={styles.keyword}>{name}</span>
         </div>
     )
 }
 
-export function Reference({title, url, hasLink, key}){
+export function Reference({title, url, hasLink}){
     return(
         <div className="container">
         {hasLink ?

@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuthData } from "../hooks/useAuth";
-import SubmitBtn from "./submitBtn";
+import SubmitBtn from "./Buttons/submitBtn";
 
 export default function Signup({styles}: {styles: any}) {
     const { authSignup } = useAuthData();

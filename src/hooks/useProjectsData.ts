@@ -1,8 +1,9 @@
 "use server"
-import { collection, doc, setDoc, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, doc, setDoc, getDocs, query, orderBy, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 type Projects = {
+    prevTitle?: string;
     title: string;
     keywords: string[];
     url: string;
@@ -41,6 +42,43 @@ export const useProjectsData = () => {
         }
         return projects;
     }
+
+    const deleteProject = async ({id}: {id: string}) => {
+        try {
+            await deleteDoc(doc(db, "projects", id));
+        } catch (e) {
+            console.error("Error deleting project: ", e);
+        }
+    }
+
+    const editProject = async ({prevTitle, title, keywords, url, imgURL, id, desc}: Projects) => {
+        try{
+            if(prevTitle && (prevTitle !== title)) {
+                await deleteDoc(doc(db, "projects", prevTitle));
+                await setDoc(doc(db, "projects", title), {
+                    title,
+                    keywords,
+                    url,
+                    imgURL,
+                    id,
+                    desc
+                }, { merge: true});
+            }
+            else{
+                await updateDoc(doc(db, "projects", title), {
+                    title,
+                    keywords,
+                    url,
+                    imgURL,
+                    id,
+                    desc
+                });
+            }
+        }
+        catch (e) {
+            console.error("Error editing project: ", e);
+        }
+    }
     
-    return { addProject, getProject };
+    return { addProject, getProject, deleteProject, editProject };
 }

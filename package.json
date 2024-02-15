@@ -2,7 +2,6 @@
   "name": "web-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://JesusMunoz01.github.io/WebPortfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
