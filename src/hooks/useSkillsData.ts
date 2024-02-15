@@ -1,5 +1,5 @@
 "use server"
-import { collection, doc, setDoc, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, doc, setDoc, getDocs, orderBy, query, deleteDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 type Skills = {
@@ -31,6 +31,14 @@ export const useSkillsData = () => {
         }
         return skills;
     }
+
+    const deleteSkill = async ({name}: Skills) => {
+        try {
+            await deleteDoc(doc(db, "skills", name));
+        } catch (e) {
+            console.error("Error deleting skill: ", e);
+        }
+    }
     
-    return { addSkill, getSkill };
+    return { addSkill, getSkill, deleteSkill };
 }

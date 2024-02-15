@@ -3,6 +3,7 @@ import Signup from "../../components/signup";
 import styles from "./page.module.css";
 import { useAuthData } from "../../hooks/useAuth";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export default async function Admin() {
   
@@ -17,7 +18,12 @@ export default async function Admin() {
   least one lowercase letter, one uppercase letter, one number, and one special character", login: false, user: ""};
   try {
     const username = await authSignin({email, password});
-    return {message: "", user: username as string, login: true};
+    revalidatePath("/info");
+    revalidatePath("/projects");
+    if(username)
+      return {message: "", user: username as string, login: true};
+    else
+      return {message: "Invalid username or password", login: false, user: ""};
   } catch (e) {
     return {message: "An error has occured", login: false, user: ""};
   }
@@ -28,17 +34,24 @@ const useSignout = async () => {
   const { authSignout } = useAuthData();
     try {
         await authSignout();
+        revalidatePath("/info");
+        revalidatePath("/projects");
     } catch (e) {
         
     }
     redirect("/");
   };
 
+  const redirectUser = async () => {
+    "use server"
+    redirect("/")
+  }
+
   return (
     <main className={styles.main}>
       <h1>Admin Login</h1>
       {/* <Signup styles={styles}/> */}
-      <Signin styles={styles} userLogin={useLogin} userSignout={useSignout}/>
+      <Signin styles={styles} userLogin={useLogin} userSignout={useSignout} redirect={redirectUser}/>
     </main>
   );
 }
