@@ -7,6 +7,8 @@
 }
 
 .linkInfo{
+  display: block;
+  position: relative;
   word-wrap: break-all;
   overflow-wrap: break-word;
   color: #3dd5f3;
@@ -48,8 +50,60 @@
   overflow-wrap: break-word;
 }
 
+.imgDiv{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  justify-self: center;
+
+}
+
+.imgSliderImg{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 0.3s ease-in-out;
+}
+
+.imgList{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imgBtn{
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.imgBtn:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imgBtn > * {
+  fill: rgb(0, 0, 0);
+  width: 1.5rem;
+  height: 2rem;
+}
+
 #p3, #p5{
-  width: 45%;
+  width: 30%;
   height: auto;
   padding: 2px;
 }
